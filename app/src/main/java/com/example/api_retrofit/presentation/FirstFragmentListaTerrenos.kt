@@ -6,14 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.api_retrofit.R
+import com.example.api_retrofit.databinding.FragmentFirstListaTerrenosBinding
 
 class FirstFragmentListaTerrenos : Fragment() {
+    lateinit var binding: FragmentFirstListaTerrenosBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_first_lista_terrenos, container, false)
+        binding = FragmentFirstListaTerrenosBinding.inflate(layoutInflater)
+        return binding.root
     }
-
 }
