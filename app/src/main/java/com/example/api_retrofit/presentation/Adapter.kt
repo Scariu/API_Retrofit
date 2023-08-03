@@ -25,9 +25,17 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
         return listaTerrenos.size
     }
 
+    fun setData(listaTerrenos: List<Terreno>) {
+            this.listaTerrenos.clear()
+            this.listaTerrenos.addAll(listaTerrenos)
+            notifyDataSetChanged()
+    }
+
     class ViewHolder(val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(terreno: Terreno) {
             binding.imagenTerreno.load(terreno.image)
+            binding.tvType.text = terreno.type
+            binding.tvPrice.text = terreno.price.toString()
         }
     }
 }
