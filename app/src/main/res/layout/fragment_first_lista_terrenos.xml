@@ -5,28 +5,30 @@
     android:id="@+id/clFirst"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CDDC39"
-    tools:context=".presentation.FirstFragmentListaTerrenos" >
+    android:background="#222601"
+    tools:context=".presentation.FirstFragmentListaTerrenos">
 
     <Button
         android:id="@+id/btnCargar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:backgroundTint="#6E8C03"
         android:text="Cargar"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
         android:id="@+id/recyclerViewFirst"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCargar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCargar"
+        app:spanCount="2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
