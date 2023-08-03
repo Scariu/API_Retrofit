@@ -21,8 +21,6 @@ class FirstFragmentListaTerrenos : Fragment() {
     ): View? {
         binding = FragmentFirstListaTerrenosBinding.inflate(layoutInflater)
         initListeners()
-        initAdapter()
-
         return binding.root
     }
 
@@ -39,7 +37,7 @@ class FirstFragmentListaTerrenos : Fragment() {
     private fun initListeners() {
         binding.btnCargar.setOnClickListener{
             viewModel.getListaTerrenos()
-
+            initAdapter()
         }
     }
 }
