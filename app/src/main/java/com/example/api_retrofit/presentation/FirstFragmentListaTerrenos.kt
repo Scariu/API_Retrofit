@@ -29,7 +29,7 @@ class FirstFragmentListaTerrenos : Fragment() {
         val adapter = Adapter()
         binding.recyclerViewFirst.adapter = adapter
         //Observa la lista y esta atento a cambios
-        viewModel.terrenosLiveData.observe(viewLifecycleOwner){
+        viewModel.terrenosLiveData().observe(viewLifecycleOwner){
             adapter.setData(it)
         }
     }
