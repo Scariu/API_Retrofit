@@ -8,8 +8,8 @@ import androidx.room.Query
 @Dao
 interface TerrenoDAO {
     @Insert
-    suspend fun insertarTerrenoDao(terrenoEntity: TerrenoEntity)
+    suspend fun insertarTerrenoFromEntity(terrenoEntity: TerrenoEntity)
 
     @Query("SELECT * FROM tabla_terrenos order by id ASC")
-    fun getTodosTerrenosDao(): LiveData<List<TerrenoEntity>>
+    fun getTodosTerrenosFromEntity(): LiveData<List<TerrenoEntity>>
 }
