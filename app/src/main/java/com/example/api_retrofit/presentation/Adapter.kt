@@ -30,21 +30,21 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
     }
 
     fun setData(listaTerrenos: List<TerrenoEntity>) {
-            this.listaTerrenos.clear()
-            this.listaTerrenos.addAll(listaTerrenos)
-            notifyDataSetChanged()
+        this.listaTerrenos.clear()
+        this.listaTerrenos.addAll(listaTerrenos)
+        notifyDataSetChanged()
     }
 
     class ViewHolder(val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(terrenoEntity: TerrenoEntity) {
             binding.imagenTerreno.load(terrenoEntity.image)
-            binding.cvItem.setOnClickListener{
+            binding.cvItem.setOnClickListener {
                 val bundle = Bundle()
                 bundle.putString("id", terrenoEntity.id)
-                bundle.putString("type", terrenoEntity.type)
-                bundle.putString("price", terrenoEntity.price.toString())
-                bundle.putString("image", terrenoEntity.image)
-                Navigation.findNavController(binding.root).navigate(R.id.action_firstFragmentListaTerrenos_to_secondFragmentDetalleTerrenos, bundle)
+                Navigation.findNavController(binding.root).navigate(
+                    R.id.action_firstFragmentListaTerrenos_to_secondFragmentDetalleTerrenos,
+                    bundle
+                )
             }
         }
     }

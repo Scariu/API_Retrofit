@@ -20,8 +20,10 @@ class Repositorio(private val terrenoAPI: TerrenoAPI, private val terrenoDAO: Te
             }
         }
     }
+    fun obtenerTerrenosConId(id: String): LiveData<TerrenoEntity> = terrenoDAO.getTerrenoWithId(id)
 }
 
 //Desde un terreno creamos un terrenoEntity
 fun Terreno.transformToEntity(): TerrenoEntity =
     TerrenoEntity(this.id, this.price, this.type, this.image)
+
