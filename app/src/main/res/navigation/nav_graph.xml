@@ -9,5 +9,18 @@
         android:id="@+id/firstFragmentListaTerrenos"
         android:name="com.example.api_retrofit.presentation.FirstFragmentListaTerrenos"
         android:label="fragment_first_lista_terrenos"
-        tools:layout="@layout/fragment_first_lista_terrenos" />
+        tools:layout="@layout/fragment_first_lista_terrenos" >
+        <action
+            android:id="@+id/action_firstFragmentListaTerrenos_to_secondFragmentDetalleTerrenos"
+            app:destination="@id/secondFragmentDetalleTerrenos" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragmentDetalleTerrenos"
+        android:name="com.example.api_retrofit.presentation.SecondFragmentDetalleTerrenos"
+        android:label="fragment_second_detalle_terrenos"
+        tools:layout="@layout/fragment_second_detalle_terrenos" >
+        <action
+            android:id="@+id/action_secondFragmentDetalleTerrenos_to_firstFragmentListaTerrenos"
+            app:destination="@id/firstFragmentListaTerrenos" />
+    </fragment>
 </navigation>

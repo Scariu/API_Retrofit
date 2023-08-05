@@ -2,8 +2,10 @@ package com.example.api_retrofit.presentation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.example.api_retrofit.R
 import com.example.api_retrofit.data.local.TerrenoEntity
 import com.example.api_retrofit.data.remote.Terreno
 import com.example.api_retrofit.databinding.ItemBinding
@@ -37,6 +39,9 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
             binding.imagenTerreno.load(terrenoEntity.image)
             binding.tvType.text = terrenoEntity.type
             binding.tvPrice.text = terrenoEntity.price.toString()
+            binding.cvItem.setOnClickListener{
+                Navigation.findNavController(binding.root).navigate(R.id.action_firstFragmentListaTerrenos_to_secondFragmentDetalleTerrenos)
+            }
         }
     }
 }

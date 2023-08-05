@@ -6,14 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.api_retrofit.R
+import com.example.api_retrofit.databinding.FragmentSecondDetalleTerrenosBinding
 
 class SecondFragmentDetalleTerrenos : Fragment() {
-
+lateinit var binding: FragmentSecondDetalleTerrenosBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second_detalle_terrenos, container, false)
+       binding = FragmentSecondDetalleTerrenosBinding.inflate(layoutInflater)
+        return binding.root
     }
 }
