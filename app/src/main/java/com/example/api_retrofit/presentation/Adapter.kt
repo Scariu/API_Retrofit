@@ -1,5 +1,6 @@
 package com.example.api_retrofit.presentation
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
@@ -40,7 +41,12 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
             binding.tvType.text = terrenoEntity.type
             binding.tvPrice.text = terrenoEntity.price.toString()
             binding.cvItem.setOnClickListener{
-                Navigation.findNavController(binding.root).navigate(R.id.action_firstFragmentListaTerrenos_to_secondFragmentDetalleTerrenos)
+                val bundle = Bundle()
+                bundle.putString("id", terrenoEntity.id)
+                bundle.putString("type", terrenoEntity.type)
+                bundle.putString("price", terrenoEntity.price.toString())
+                bundle.putString("image", terrenoEntity.image)
+                Navigation.findNavController(binding.root).navigate(R.id.action_firstFragmentListaTerrenos_to_secondFragmentDetalleTerrenos, bundle)
             }
         }
     }
