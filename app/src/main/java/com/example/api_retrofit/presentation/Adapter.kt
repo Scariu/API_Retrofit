@@ -38,8 +38,6 @@ class Adapter : RecyclerView.Adapter<Adapter.ViewHolder>() {
     class ViewHolder(val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(terrenoEntity: TerrenoEntity) {
             binding.imagenTerreno.load(terrenoEntity.image)
-            binding.tvType.text = terrenoEntity.type
-            binding.tvPrice.text = terrenoEntity.price.toString()
             binding.cvItem.setOnClickListener{
                 val bundle = Bundle()
                 bundle.putString("id", terrenoEntity.id)
